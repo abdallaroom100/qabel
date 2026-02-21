@@ -7200,10 +7200,23 @@ input {
     padding-bottom: 3rem;
   }
   .container {
-        padding: 12px !important;
+    padding: 12px !important;
+  }
+  .nav-bar .container {
+    justify-content: space-around !important;
+    padding-top: 0px !important;
+    padding-inline: 3px !important;
+  }
+  .community__col-text {
+    justify-content: center !important;
+    align-items: center !important; 
   }
   .h2.prefooter__h2 {
     font-size: 2rem !important;
+  }
+  .community__col-text {
+    justify-content: center;
+    align-items: center;
   }
 }
 .footer__h2.text-line {
