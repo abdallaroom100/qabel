@@ -11,7 +11,7 @@ let transitionOffset = 25; /* ms */
 const sunTransformText = $('.welcome-sun__transform').find('.chat-cloud__p').text();
 
 CustomEase.create("cubic-default", "0.625, 0.05, 0, 1");
-gsap.defaults({ease: "cubic-default", duration: durationDefault});
+gsap.defaults({ ease: "cubic-default", duration: durationDefault });
 
 initPageTransitions();
 
@@ -23,13 +23,13 @@ function animateRainbow(selector, mode, count, duration = 4, delay = 0, stagger 
     rainbowTimeline = gsap.timeline({ scrollTrigger: scrollTriggerConfig });
   }
 
-  const paths  = document.querySelectorAll(selector + ' path');
+  const paths = document.querySelectorAll(selector + ' path');
   const isFrom = mode === 'fromStart' || mode === 'fromEnd';
-  const draw   = mode.endsWith('Start') ? '0% 0%' : '100% 100%';
+  const draw = mode.endsWith('Start') ? '0% 0%' : '100% 100%';
 
   for (let i = 0; i < count; i++) {
-    const targets = [ paths[i], paths[i + count] ];
-    const pos     = delay + i * stagger;
+    const targets = [paths[i], paths[i + count]];
+    const pos = delay + i * stagger;
 
     if (rainbowTimeline) {
       rainbowTimeline[isFrom ? 'from' : 'to'](
@@ -53,31 +53,31 @@ function rainbowsScrolltrigger() {
   // animateRainbow('.rainbow-vertical__1', 'fromStart', 9, 1, 0.5, 0.075, null, {trigger: '.stacked-cards__collection', start: 'center 90%', toggleActions: 'play none none reverse'});
   // animateRainbow('.rainbow-vertical__2', 'fromStart', 9, 0.5, 0, 0.075, null, {trigger: '.about__top', start: 'center 90%', toggleActions: 'play none none reverse'});
   // animateRainbow('.rainbow-vertical__3', 'fromStart', 9, 0.5, 0, 0.075, null, {trigger: '.about__bottom', start: 'center 90%', toggleActions: 'play none none reverse'});
-  
+
   // animateRainbow('.rainbow-sides__right', 'toStart', 4, 0.75, 0.125, 0.075, null, {trigger: '.stacked-cards__collection', start: 'clamp(top bottom)', end: 'bottom top', scrub: 0});
   // animateRainbow('.rainbow-sides__left', 'toEnd', 4, 0.75, 0, 0.075, null, {trigger: '.stacked-cards__collection', start: 'clamp(top bottom)', end: 'bottom top', scrub: 0});
   // animateRainbow('.rainbow-vertical__1', 'fromStart', 9, 0.75, 0.25, 0.075, null, {trigger: '.stacked-cards__collection', start: 'clamp(top bottom)', end: 'bottom top', scrub: 0});
   // animateRainbow('.rainbow-vertical__2', 'fromStart', 9, 0.5, 0, 0.075, null, {trigger: '.about__top', start: 'top bottom', end: 'bottom top', scrub: 0});
   // animateRainbow('.rainbow-vertical__3', 'fromStart', 9, 0.5, 0, 0.075, null, {trigger: '.about__bottom', start: 'top bottom', end: 'bottom top', scrub: 0});
-  
+
   // animateRainbow('.rainbow-sides__right', 'toStart', 4, 0.75, 0, 0.075, null, {trigger: '.stacked-cards__collection', start: 'center 75%', toggleActions: 'play none none reverse'});
   // animateRainbow('.rainbow-sides__left', 'toEnd', 4, 0.75, 0, 0.075, null, {trigger: '.stacked-cards__collection', start: 'center 75%', toggleActions: 'play none none reverse'});
   // animateRainbow('.rainbow-vertical__1', 'fromStart', 9, 1, 0, 0.075, null, {trigger: '.stacked-cards__collection', start: 'center 75%', toggleActions: 'play none none reverse'});
   // animateRainbow('.rainbow-vertical__1-scrub', 'fromStart', 9, 0.5, 0, 0.075, null, {trigger: '.about__top', start: '-100% 100%', end: '-50% 50%', scrub: 0});
   // animateRainbow('.rainbow-vertical__2', 'fromStart', 9, 0.5, 0, 0.075, null, {trigger: '.about__top', start: 'top 100%', end: 'bottom 50%', scrub: 0});
   // animateRainbow('.rainbow-vertical__3', 'fromStart', 9, 0.5, 0, 0.075, null, {trigger: '.about__bottom', start: 'top 100%', end: 'bottom 50%', scrub: 0});
-  
-  animateRainbow('.rainbow-sides__right', 'toStart', 4, 0.75, 0.125, 0.075, null, {trigger: '.stacked-cards__collection', start: 'clamp(top bottom)', end: 'bottom top', scrub: 0});
-  animateRainbow('.rainbow-sides__left', 'toEnd', 4, 0.75, 0, 0.075, null, {trigger: '.stacked-cards__collection', start: 'clamp(top bottom)', end: 'bottom top', scrub: 0});
-  animateRainbow('.rainbow-vertical__1', 'fromStart', 9, 0.5, 0, 0.0375, null, {trigger: '.welcome', start: 'clamp(top bottom)',  endTrigger: ".about__tile", end: 'bottom bottom', scrub: 0});
-  animateRainbow('.rainbow-vertical__3', 'fromStart', 9, 0.5, 0, 0.075, null, {trigger: '.about__bottom', start: 'top 100%', end: 'bottom 50%', scrub: 0});
+
+  animateRainbow('.rainbow-sides__right', 'toStart', 4, 0.75, 0.125, 0.075, null, { trigger: '.stacked-cards__collection', start: 'clamp(top bottom)', end: 'bottom top', scrub: 0 });
+  animateRainbow('.rainbow-sides__left', 'toEnd', 4, 0.75, 0, 0.075, null, { trigger: '.stacked-cards__collection', start: 'clamp(top bottom)', end: 'bottom top', scrub: 0 });
+  animateRainbow('.rainbow-vertical__1', 'fromStart', 9, 0.5, 0, 0.0375, null, { trigger: '.welcome', start: 'clamp(top bottom)', endTrigger: ".about__tile", end: 'bottom bottom', scrub: 0 });
+  animateRainbow('.rainbow-vertical__3', 'fromStart', 9, 0.5, 0, 0.075, null, { trigger: '.about__bottom', start: 'top 100%', end: 'bottom 50%', scrub: 0 });
 }
 
 // Animation - Page Loader
 function initLoaderShort() {
-  
+
   var tl = gsap.timeline();
-  
+
   tl.call(function () {
     lenis.stop();
   }, null, 0);
@@ -86,18 +86,18 @@ function initLoaderShort() {
     pageTransitionOut();
     rainbowsScrolltrigger();
   }, null, 0);
-  
+
   tl.set($('.loading-screen'), {
     autoAlpha: 0,
   });
 }
-  
+
 
 // Animation - Page Loader
 function initLoader() {
 
   var tl = gsap.timeline();
-  
+
   tl.set($('main'), {
     overflow: "clip",
     height: "100svh"
@@ -109,62 +109,62 @@ function initLoader() {
       const h = $(window).height();
       const elH = $('.welcome-sun__transform').outerHeight();
       const top = $('.welcome-sun__transform').offset().top - $(window).scrollTop();
-      return (h - elH)/2 - top;
+      return (h - elH) / 2 - top;
     }
   });
-  
+
   tl.set($('.welcome-sun__transform .chat-cloud__p'), {
     text: "...",
   });
-  
+
   tl.to($('.loading-screen'), {
     autoAlpha: 0,
     duration: 0.3,
     ease: "none",
     delay: 0.1
   });
-  
+
   tl.to($('.welcome-sun__transform .chat-cloud__p'), {
     duration: 0.4,
     text: "Hi Friends!",
     ease: "none",
     delay: 0.2
   });
-  
+
   tl.to($('.welcome-sun__transform .chat-cloud__p'), {
     duration: 0.25,
     text: "...",
     ease: "none",
     delay: 1,
   });
-  
+
   tl.to($('.welcome-sun__transform .chat-cloud__p'), {
     duration: 0.5,
     text: "We are back...",
     ease: "none",
   });
-  
+
   tl.to($('.welcome-sun__transform .chat-cloud__p'), {
     duration: 0.25,
     text: "...",
     ease: "none",
     delay: 1,
   });
-  
+
   tl.to($('.welcome-sun__transform .chat-cloud__p'), {
     duration: 0.5,
     text: sunTransformText,
     ease: "none",
   });
-  
+
   tl.to($('.welcome-sun__transform'), {
     y: 0,
   }, "< -1");
-  
+
   tl.from($('.nav-bar'), {
     yPercent: -102,
   }, "<");
-  
+
   tl.from($('.welcome__row-cards'), {
     duration: 1,
     y: "3em",
@@ -172,15 +172,15 @@ function initLoader() {
     stagger: -0.025,
     ease: "Expo.easeOut"
   }, "< 0.5")
-  
-  tl.from($('.welcome__h1 > span, .welcome__h2-box-wrap'), {
+
+  tl.from($('.welcome__h1 .text-line, .welcome__h2-box-wrap'), {
     duration: 1,
     yPercent: 100,
     autoAlpha: 0,
-    stagger: -0.025,
+    stagger: 0.1,
     ease: "Expo.easeOut",
   }, "< 0.0025")
-  
+
   tl.call(function () {
     lenis.stop();
   }, null, 0);
@@ -191,11 +191,11 @@ function initLoader() {
 
   tl.call(function () {
     pageTransitionOut();
-    
+
     gsap.set($('main'), {
       clearProps: "all"
     });
-    
+
     rainbowsScrolltrigger();
   }, null, 3);
 }
@@ -204,12 +204,12 @@ function initLoader() {
 function pageTransitionIn() {
   var tl = gsap.timeline();
 
-  if (document.querySelector('.lorem-ipsum')) {}
+  if (document.querySelector('.lorem-ipsum')) { }
 
   tl.call(function () {
     lenis.stop();
   });
-  
+
 }
 
 // Animation - Page Enter
@@ -351,7 +351,7 @@ function initLenis() {
   });
 
   gsap.ticker.lagSmoothing(0);
-  
+
 }
 
 // Don't touch
@@ -420,7 +420,7 @@ function initCheckWindowHeight() {
  * Basic Functions
  */
 function initBasicFunctions() {
-  
+
   // Toggle YT Modal
   $('[data-yt-modal-toggle="toggle"]').click(function () {
     if ($('[data-yt-modal-status]').attr('data-yt-modal-status') == 'not-active') {
@@ -436,7 +436,7 @@ function initBasicFunctions() {
   $('[data-yt-modal-toggle="close"]').click(function () {
     $('[data-yt-modal-status]').attr('data-yt-modal-status', 'not-active');
     lenis.start();
-    
+
     // Stop YouTube iframe by resetting their src
     $('iframe[src*="youtube.com"]').each(function () {
       var $iframe = $(this);
@@ -452,7 +452,7 @@ function initBasicFunctions() {
       if ($('[data-yt-modal-status]').attr('data-yt-modal-status') == 'active') {
         $('[data-yt-modal-status]').attr('data-yt-modal-status', 'not-active');
         lenis.start();
-        
+
         // Stop YouTube iframe by resetting their src
         $('iframe[src*="youtube.com"]').each(function () {
           var $iframe = $(this);
@@ -463,7 +463,7 @@ function initBasicFunctions() {
       }
     }
   });
-  
+
   // Show and hide Sunny on Scroll
   gsap.set(".sunny-fixed", { xPercent: -200 });
   ScrollTrigger.create({
@@ -479,21 +479,21 @@ function initBasicFunctions() {
       });
     }
   });
-  
+
   // Fixed Sunny Text on Hover
   gsap.set(".sunny-fixed .chat-cloud", { autoAlpha: 0 });
   function showText() {
-    
+
     gsap.set($('.sunny-fixed .chat-cloud__p'), {
       text: '...'
     });
-    
+
     gsap.to($('.sunny-fixed .chat-cloud'), {
       duration: 0.2,
       autoAlpha: 1,
       ease: "none"
     });
-    
+
     gsap.to($('.sunny-fixed .chat-cloud__p'), {
       duration: 0.5,
       text: sunTransformText,
@@ -507,7 +507,7 @@ function initBasicFunctions() {
       text: "...",
       ease: "none"
     });
-    
+
     gsap.to($('.sunny-fixed .chat-cloud'), {
       duration: 0.2,
       autoAlpha: 0,
@@ -520,32 +520,32 @@ function initBasicFunctions() {
   $('.sunny-fixed .sun-chat-combo').on('mouseenter', showText).on('mouseleave', hideText);
 
   // mobile/touch: tap to show
-  $('.sunny-fixed .sun-chat-combo').on('click touchstart', function(e) {
+  $('.sunny-fixed .sun-chat-combo').on('click touchstart', function (e) {
     e.stopPropagation(); // prevent immediate document handler
     showText();
   });
 
   // tap outside to hide
-  $(document).on('click touchstart', function(e) {
+  $(document).on('click touchstart', function (e) {
     if (!$(e.target).closest($('.sunny-fixed .sun-chat-combo')).length) {
       hideText();
     }
   });
-  
-  gsap.fromTo($('.footer .sun'), { 
-      yPercent: 50 
-    }, {
-      yPercent: 0,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: $('.footer'),
-        start: 'top bottom',    // when footer top enters viewport
-        end: 'bottom bottom',   // when footer bottom reaches bottom of viewport
-        scrub: true
-      }
+
+  gsap.fromTo($('.footer .sun'), {
+    yPercent: 50
+  }, {
+    yPercent: 0,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: $('.footer'),
+      start: 'top bottom',    // when footer top enters viewport
+      end: 'bottom bottom',   // when footer bottom reaches bottom of viewport
+      scrub: true
     }
+  }
   );
-  
+
   $('.about__tile').each(function () {
     let triggerElement = $(this);
     let targetElementGroup = $(this).find('.rotate-circle__list');
@@ -564,14 +564,14 @@ function initBasicFunctions() {
 
     tl.fromTo(targetElementGroup, {
       rotate: rtatePlus
-    },{
+    }, {
       rotate: rotateMin,
       ease: "linear",
     });
-    
+
     tl.fromTo(targetElementSingle, {
       rotate: rotateMin
-    },{
+    }, {
       rotate: rtatePlus,
       ease: "linear",
     }, "<");
@@ -582,16 +582,16 @@ function initBasicFunctions() {
  * Stacked Cards with Drag
  */
 function initStackedCardsDrag() {
-  $('[data-stacked-cards]').each(function() {
+  $('[data-stacked-cards]').each(function () {
 
     // animation presets
     let easeBeforeRelease = { duration: 0.2, ease: 'Power2.easeOut' };
-    let easeAfterRelease  = { duration: 1, ease: 'elastic.out(1,0.75)' };
-    let activeDeg         = '3deg';
-    let inactiveDeg       = '-3deg';
+    let easeAfterRelease = { duration: 1, ease: 'elastic.out(1,0.75)' };
+    let activeDeg = '3deg';
+    let inactiveDeg = '-3deg';
 
     const $container = $(this);
-    const $list      = $container.find('[data-stacked-cards-list]');
+    const $list = $container.find('[data-stacked-cards-list]');
 
     // Draggable instances & cached elements
     let dragFirst, dragSecond;
@@ -612,15 +612,15 @@ function initStackedCardsDrag() {
 
       // cache top two cards
       const $items = $list.children('[data-stacked-cards-item]');
-      $firstItem   = $items.eq(0);
-      $secondItem  = $items.eq(1);
-      firstEl      = $firstItem.find('[data-stacked-cards-card]')[0];
-      secondEl     = $secondItem.find('[data-stacked-cards-card]')[0];
+      $firstItem = $items.eq(0);
+      $secondItem = $items.eq(1);
+      firstEl = $firstItem.find('[data-stacked-cards-card]')[0];
+      secondEl = $secondItem.find('[data-stacked-cards-card]')[0];
 
       // compute thresholds
       const width = $firstItem.find('[data-stacked-cards-card]').outerWidth();
       full = width * 1.15;
-      t    = width * 0.1;
+      t = width * 0.1;
 
       // kill old Draggables
       dragFirst?.kill();
@@ -646,7 +646,7 @@ function initStackedCardsDrag() {
           gsap.set(firstEl, { x: raw, rotation: 0 });
         },
         onDragEnd() {
-          const x   = this.x;
+          const x = this.x;
           const dir = x > 0 ? 'right' : 'left';
 
           // hand control to second card
@@ -766,9 +766,9 @@ function initStackedCardsDrag() {
  * Sunny Follow Mouse 
  */
 function initSunnyFollowMouse() {
-  const faces = $('[data-sunny-face]').map(function() {
+  const faces = $('[data-sunny-face]').map(function () {
     return {
-      el:   this,
+      el: this,
       setX: gsap.quickTo(this, 'xPercent', { duration: 0.4, ease: 'power3' }),
       setY: gsap.quickTo(this, 'yPercent', { duration: 0.4, ease: 'power3' })
     };
@@ -779,10 +779,10 @@ function initSunnyFollowMouse() {
     const my = e.clientY;
 
     faces.forEach(face => {
-      const r  = face.el.getBoundingClientRect();
-      const cx = r.left + r.width  / 2;
-      const cy = r.top  + r.height / 2;
-      const rx = r.width  / 2;
+      const r = face.el.getBoundingClientRect();
+      const cx = r.left + r.width / 2;
+      const cy = r.top + r.height / 2;
+      const rx = r.width / 2;
       const ry = r.height / 2;
 
       // delta → raw normalized
@@ -884,7 +884,7 @@ function initScrollToAnchorLenis() {
 function initCSSMarquee() {
   const pixelsPerSecond = 75; // Set the marquee speed (pixels per second)
   const marquees = document.querySelectorAll('[data-css-marquee]');
-  
+
   // Duplicate each [data-css-marquee-list] element inside its container
   marquees.forEach(marquee => {
     marquee.querySelectorAll('[data-css-marquee-list]').forEach(list => {
@@ -896,12 +896,12 @@ function initCSSMarquee() {
   // Create an IntersectionObserver to check if the marquee container is in view
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      entry.target.querySelectorAll('[data-css-marquee-list]').forEach(list => 
+      entry.target.querySelectorAll('[data-css-marquee-list]').forEach(list =>
         list.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused'
       );
     });
   }, { threshold: 0 });
-  
+
   // Calculate the width and set the animation duration accordingly
   marquees.forEach(marquee => {
     marquee.querySelectorAll('[data-css-marquee-list]').forEach(list => {
@@ -926,7 +926,7 @@ function initStickyCursor() {
 
   const instances = [];
 
-  document.querySelectorAll('[data-sticky-cursor]').forEach(function(container) {
+  document.querySelectorAll('[data-sticky-cursor]').forEach(function (container) {
     const target = container.querySelector('[data-sticky-cursor-target]');
     if (!target) return;
 
@@ -934,11 +934,11 @@ function initStickyCursor() {
 
     // initial measure
     const cont_rect = container.getBoundingClientRect();
-    const tgt_rect  = target.getBoundingClientRect();
+    const tgt_rect = target.getBoundingClientRect();
     let orig_x = tgt_rect.left - cont_rect.left;
-    let orig_y = tgt_rect.top  - cont_rect.top;
+    let orig_y = tgt_rect.top - cont_rect.top;
 
-    let is_inside  = false;
+    let is_inside = false;
     let last_event = null;
 
     function animate_to(e) {
@@ -963,16 +963,16 @@ function initStickyCursor() {
       });
     }
 
-    container.addEventListener('mouseenter', function(e) {
-      is_inside  = true;
+    container.addEventListener('mouseenter', function (e) {
+      is_inside = true;
       last_event = e;
       animate_to(e);
     });
-    container.addEventListener('mousemove', function(e) {
+    container.addEventListener('mousemove', function (e) {
       last_event = e;
       animate_to(e);
     });
-    container.addEventListener('mouseleave', function() {
+    container.addEventListener('mouseleave', function () {
       is_inside = false;
       gsap.to(target, {
         x: 0,
@@ -985,19 +985,19 @@ function initStickyCursor() {
 
     instances.push({
       container: container,
-      target:    target,
+      target: target,
       get orig_x() { return orig_x; },
       set orig_x(v) { orig_x = v; },
       get orig_y() { return orig_y; },
       set orig_y(v) { orig_y = v; },
       is_inside: () => is_inside,
-      get_last:  () => last_event
+      get_last: () => last_event
     });
   });
 
   // on scroll, re‐apply last animation if still hovering
-  window.addEventListener('scroll', function() {
-    instances.forEach(function(inst) {
+  window.addEventListener('scroll', function () {
+    instances.forEach(function (inst) {
       if (!inst.is_inside()) return;
       const e = inst.get_last();
       if (!e) return;
@@ -1006,12 +1006,12 @@ function initStickyCursor() {
   });
 
   // on resize, recalc each orig_x/orig_y and re‐apply if needed
-  window.addEventListener('resize', function() {
-    instances.forEach(function(inst) {
+  window.addEventListener('resize', function () {
+    instances.forEach(function (inst) {
       const cR = inst.container.getBoundingClientRect();
       const tR = inst.target.getBoundingClientRect();
       inst.orig_x = tR.left - cR.left;
-      inst.orig_y = tR.top  - cR.top;
+      inst.orig_y = tR.top - cR.top;
 
       if (inst.is_inside()) {
         const e = inst.get_last();
@@ -1057,7 +1057,7 @@ function initAccordionCSS() {
 
       const isActive = singleAccordion.getAttribute('data-accordion-status') === 'active';
       singleAccordion.setAttribute('data-accordion-status', isActive ? 'not-active' : 'active');
-      
+
       // When [data-accordion-close-siblings="true"]
       if (closeSiblings && !isActive) {
         accordion.querySelectorAll('[data-accordion-status="active"]').forEach((sibling) => {
