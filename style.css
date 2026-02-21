@@ -7218,6 +7218,16 @@ input {
     justify-content: center;
     align-items: center;
   }
+  .text-line{
+    -webkit-text-stroke: 5px !important;
+    -webkit-text-stroke-color: #525c32 !important;
+    font-family: 'Lalezar', sans-serif;
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 1;
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px #121212;
+    paint-order: stroke fill;
+  }
 }
 .footer__h2.text-line {
   color: orange;
