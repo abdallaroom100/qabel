@@ -2993,7 +2993,10 @@ strong {
   box-shadow: 0 0.05em 0 0 #00000026;
 }
 
+
 .h2__boxed.is--faq {
+    font-family: 'Lalezar', Arial, sans-serif !important;
+  margin-top: 20px ;
   background-color: var(--color-orange);
   margin-top: 0.0625em;
   font-size: 0.9em;
@@ -3964,7 +3967,6 @@ strong {
 
 .prefooter__h2 {
    
-    font-family: 'Cairo', Arial, sans-serif !important;
 
   text-align: center;
   flex-flow: column;
@@ -4253,7 +4255,7 @@ strong {
   width: 200%;
   display: flex;
   position: absolute;
-  right: 25%;
+  right: 45%;
 }
 
 .rotate-circle__before {
@@ -4901,7 +4903,7 @@ strong {
 
   .speakers__h2 {
     align-items: center;
-    font-size: 3.5em;
+    font-size: 1.5em !important;
   }
 
   .speakers__text {
@@ -5028,7 +5030,7 @@ strong {
 
   .prefooter__h2 {
     align-items: center;
-    font-size: 3.25em;
+    font-size: 1.25em;
   }
 
   .prefooter__wave {
@@ -7062,6 +7064,15 @@ input {
   align-items: center !important;
 }
 
+.about__text-small p {
+  text-align: center !important;
+  font-weight: 300;
+}
+.about__text-small strong {
+  color: orange;
+    font-family: 'Lalezar', Arial, sans-serif !important;
+    font-size: 110%;
+} 
 .about__text-small {
   text-align: center !important;
   /* Since they wanted it to look like the image (which was centered) */
@@ -7175,4 +7186,27 @@ input {
 
 .then-font {  
   white-space: unset;
+}
+
+.community__h2 .h2__boxed {
+    font-family: 'Lalezar', Arial, sans-serif !important;
+}
+
+
+
+@media (max-width:450px) {
+  .expect__col-text {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .container {
+        padding: 12px !important;
+  }
+  .h2.prefooter__h2 {
+    font-size: 2rem !important;
+  }
+}
+.footer__h2.text-line {
+  color: orange;
+  white-space: nowrap;
 }
